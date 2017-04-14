@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>it.uniroma3</groupId>
+    <artifactId>spring-zuul</artifactId>
+    <version>0.1.0</version>
+    <packaging>war</packaging>
+
+    <name>spring-zuul</name>
+    <description>First Project</description>
+
+    <modules>
+        <module>gateway</module>
+        <module>movie</module>
+        <module>cinema</module>
+        <module>review</module>
+    </modules>
+</project>
