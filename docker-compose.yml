@@ -1,0 +1,13 @@
+version: '2'
+services:
+  movie:
+    image: springio/movie
+    ports:
+    - "8081:8080"
+  gateway:
+    image: springio/gateway
+    ports:
+    - "8080:8080"
+
+
+

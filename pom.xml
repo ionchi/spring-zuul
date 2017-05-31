@@ -6,7 +6,7 @@
     <groupId>it.uniroma3</groupId>
     <artifactId>spring-zuul</artifactId>
     <version>0.1.0</version>
-    <packaging>war</packaging>
+    <packaging>pom</packaging>
 
     <name>spring-zuul</name>
     <description>First Project</description>

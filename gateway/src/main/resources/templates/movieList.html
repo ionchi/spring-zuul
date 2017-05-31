@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title>Movie list</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <link href="http://cdn.jsdelivr.net/webjars/bootstrap/3.3.6/css/bootstrap.min.css"
+          rel="stylesheet" media="screen"/>
+    <script src="http://cdn.jsdelivr.net/webjars/jquery/2.2.1/jquery.min.js"></script>
+</head>
+
+<body>
+<div class="container content">
+    <h1 class="text-center">Movie list</h1>
+
+    <table class="table">
+        <thead>
+        <tr>
+            <th>Name</th>
+            <th>Director</th>
+            <th>Rating</th>
+            <th>Detail</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="movie : ${movies}">
+            <td th:text="${movie.name}">name</td>
+            <td th:text="${movie.director}">director</td>
+            <td th:text="${movie.rating}">rating</td>
+            <td><a th:href="@{/{name}/(name=${movie.name})}" class="btn btn-primary btn-sm">more</a></td>
+        </tr>
+        </tbody>
+    </table>
+
+</div>
+</body>
+</html>
