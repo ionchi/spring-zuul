@@ -1,0 +1,31 @@
+# Spring Boot configuration
+spring:
+  profiles:
+      active: development
+  application:
+    name: gateway
+# Zuul configuration
+zuul:
+  routes:
+    movie:
+      path: /movie/**
+      url: http://localhost:8081/api/movies
+    cinema:
+      path: /cinema/**
+      url: http://localhost:8082
+    review:
+      path: /review/**
+      url: http://localhost:8083
+ribbon:
+  eureka:
+    enabled: false
+# Logger configuration
+logging:
+  pattern:
+    console: "%d %-5level %logger : %msg%n"
+  level:
+    org.springframework: INFO
+    org.hibernate: DEBUG
+# Server configuration
+server:
+  port: 8080

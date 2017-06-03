@@ -1,0 +1,27 @@
+# Spring Boot configuration
+spring:
+  profiles:
+      active: development
+  application:
+    name: movie
+# Database
+  datasource:
+    url: jdbc:postgresql://localhost:5432/movies
+    username: postgres
+    password: postgres
+    platform: POSTGRESQL
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    database: postgresql
+# Logger configuration
+logging:
+  pattern:
+    console: "%d %-5level %logger : %msg%n"
+  level:
+    org.springframework: INFO
+    org.hibernate: DEBUG
+# Server configuration
+server:
+  port: 8081

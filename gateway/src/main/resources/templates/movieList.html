@@ -27,7 +27,7 @@
             <td th:text="${movie.name}">name</td>
             <td th:text="${movie.director}">director</td>
             <td th:text="${movie.rating}">rating</td>
-            <td><a th:href="@{/{name}/(name=${movie.name})}" class="btn btn-primary btn-sm">more</a></td>
+            <td><a th:href="@{/{id}/(id=${movie.id})}" class="btn btn-primary btn-sm">more</a></td>
         </tr>
         </tbody>
     </table>

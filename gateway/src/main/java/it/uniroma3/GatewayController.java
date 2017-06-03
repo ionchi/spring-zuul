@@ -21,11 +21,11 @@ public class GatewayController {
         return "index";
     }
 
-    @RequestMapping(value = "/{movie}")
-    public String getMovie(@PathVariable String movie, Model model) {
+    @RequestMapping(value = "/{id}")
+    public String getMovie(@PathVariable Long id, Model model) {
         ObjectMapper mapper = new ObjectMapper();
         try {
-            Movie film = mapper.readValue(new URL("http://localhost:8080/movie/"+movie), Movie.class);
+            Movie film = mapper.readValue(new URL("http://localhost:8080/movie/"+id), Movie.class);
             model.addAttribute("film", film);
         } catch (JsonGenerationException e) {
             e.printStackTrace();
