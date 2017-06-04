@@ -1,17 +1,10 @@
 package it.uniroma3;
 
 public class Movie {
-    private final long id;
-    private final String name;
-    private final String director;
-    private final double rating;
-
-    public Movie() {
-        this.id = -1;
-        this.name = "default";
-        this.director = "default";
-        this.rating = -1;
-    }
+    private long id;
+    private String name;
+    private String director;
+    private double rating;
 
     public Movie(long id, String name, String director, double rating) {
         this.id = id;
@@ -19,6 +12,8 @@ public class Movie {
         this.director = director;
         this.rating = rating;
     }
+
+    public Movie() {}
 
     public long getId() {
         return id;
@@ -32,7 +27,26 @@ public class Movie {
         return director;
     }
 
-    public double getRating() {
-        return rating;
+    public double getRating() {return rating; }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setDirector(String director) {
+        this.director = director;
+    }
+
+    public void setRating(double rating) {
+        this.rating = rating;
+    }
+
+    @Override
+    public String toString() {
+        return '{' +
+                "\"name\":\"" + name + '\"' +
+                ",\"director\":\"" + director + '\"' +
+                ",\"rating\":\"" + rating + '\"' +
+                '}';
     }
 }

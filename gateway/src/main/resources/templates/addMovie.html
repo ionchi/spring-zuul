@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head lang="en" th:replace="fragments/header :: header"> </head>
+
+<body>
+<div lang="en" th:replace="fragments/nav :: nav"> </div>
+<div class="container content">
+    <div id="formbox" style="margin-top:50px;" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
+        <div class="panel panel-info">
+            <div class="panel-heading">
+                <div class="panel-title">Add movie</div>
+            </div>
+            <div style="padding-top:30px" class="panel-body">
+                <form id="loginform" class="form-horizontal" role="form" action="#" th:action="@{/addmovie}" th:object="${movie}" method="post">
+                    <div style="margin-bottom: 25px" class="input-group">
+                        <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                        <input id="name" type="text" class="form-control" name="name" placeholder="Name" th:field="*{name}" />
+                    </div>
+                    <div style="margin-bottom: 25px" class="input-group">
+                        <span class="input-group-addon"><i class="glyphicon glyphicon-film"></i></span>
+                        <input id="director" type="text" class="form-control" name="director" placeholder="Director" th:field="*{director}" />
+                    </div>
+                    <div style="margin-bottom: 25px" class="input-group">
+                        <span class="input-group-addon"><i class="glyphicon glyphicon-star"></i></span>
+                        <input id="rating" type="text" class="form-control" name="rating" placeholder="Rating" th:field="*{rating}" />
+                    </div>
+                    <div style="margin-top:10px" class="form-group">
+                        <!-- Button -->
+                        <div class="col-sm-12 controls">
+                            <input id="btn-login" type="submit" value="Submit" class="btn btn-success" />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-md-12 control">
+                            <div style="border-top: 1px solid#888; padding-top:15px; font-size:85%" >
+                                <a href="/movies/" >
+                                    Show Movie List
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+</div>
+<div lang="en" th:replace="fragments/footer :: footer"> </div>
+</body>
+</html>
