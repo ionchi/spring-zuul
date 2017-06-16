@@ -32,17 +32,17 @@ public class MovieController {
     }
 
     @RequestMapping(value = "/{id}", method = RequestMethod.GET)
-    public ResponseEntity<Movie> getMovieWithId(@PathVariable Long id) {
+    public ResponseEntity<Movie> getMovieById(@PathVariable Long id) {
         return new ResponseEntity<>(repository.findOne(id), HttpStatus.OK);
     }
 
     @RequestMapping(params = {"name"}, method = RequestMethod.GET)
-    public ResponseEntity<Collection<Movie>> findMovieWithName(@RequestParam(value = "name") String name) {
+    public ResponseEntity<Collection<Movie>> findMoviesByName(@RequestParam(value = "name") String name) {
         return new ResponseEntity<>(repository.findByName(name), HttpStatus.OK);
     }
 
     @RequestMapping(value = "/{id}", method = RequestMethod.PUT)
-    public ResponseEntity<Movie> updateMovieFromDB(@PathVariable("id") long id, @RequestBody Movie movie) {
+    public ResponseEntity<Movie> updateMovie(@PathVariable("id") long id, @RequestBody Movie movie) {
 
         Movie currentMovie = repository.findOne(id);
         currentMovie.setName(movie.getName());
@@ -53,7 +53,7 @@ public class MovieController {
     }
 
     @RequestMapping(value = "/{id}", method = RequestMethod.DELETE)
-    public void deleteMovieWithId(@PathVariable Long id) {
+    public void deleteMovieById(@PathVariable Long id) {
         repository.delete(id);
     }
 
