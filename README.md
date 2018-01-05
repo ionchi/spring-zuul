@@ -4,14 +4,14 @@
 
 ### Example: 
   ```
-  - movies/titanic return "Cameron" (movie director)
+  - movies/titanic returns "Cameron" (movie director)
   ```
   ```
-  - cinema/titanic return 2 (cinema room)
+  - cinema/titanic returns 2 (cinema room)
   ```
   ```
-  - cinema/titanic/2 return "20:30" (movie time for that room)
+  - cinema/titanic/2 returns "20:30" (movie time for that room)
   ```
   ```
-  - review/titanic return 7.7 (movie rating)
+  - review/titanic returns 7.7 (movie rating)
   ```
